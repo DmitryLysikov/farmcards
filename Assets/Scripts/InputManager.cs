@@ -11,7 +11,10 @@ public class InputManager : MonoBehaviour
 
     [SerializeField]
     private LayerMask placementLayermask;
-    
+
+    [SerializeField]
+    private Collider2D islandCollider;
+
     public event Action OnClicked, OnExit;
     public bool IsPointOverUI() => EventSystem.current.IsPointerOverGameObject();
 

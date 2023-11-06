@@ -17,7 +17,7 @@ public class CardInfo : MonoBehaviour
     public void ShowCardInfo()
     {
         var objectData = dataBase.objectsData[objectIndex];
-        Logo.sprite = Resources.Load<Sprite>(objectData.PathToSprite);
+        Logo.sprite = objectData.Sprite;
         Name.text = objectData.Name;
     }
 

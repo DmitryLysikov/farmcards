@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 1.0f;
     private Vector3 lastMousePosition;
 
     void Update()

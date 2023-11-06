@@ -25,5 +25,5 @@ public class ObjectData
     public GameObject Prefab { get; private set; }
 
     [field: SerializeField]
-    public string PathToSprite { get; private set; }
+    public Sprite Sprite { get; private set; }
 }
