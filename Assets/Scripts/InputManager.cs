@@ -11,16 +11,23 @@ public class InputManager : MonoBehaviour
 
     [SerializeField]
     private LayerMask placementLayermask;
-    
+
+    [SerializeField]
+    private Collider2D islandCollider;
+
     public event Action OnClicked, OnExit;
     public bool IsPointOverUI() => EventSystem.current.IsPointerOverGameObject();
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0)) 
+        if(Input.GetMouseButtonDown(0))
+        {
             OnClicked?.Invoke();
-        if (Input.GetKeyDown(KeyCode.Escape))
             OnExit?.Invoke();
+        }
+
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //    OnExit?.Invoke();
     }
 
     public Vector3 GetSelectedMapPosition()
