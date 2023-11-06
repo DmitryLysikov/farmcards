@@ -22,6 +22,9 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private GameObject gridVisualisation;
 
+    [SerializeField]
+    private IslandBuilding islandBuilding;
+
     private void Start()
     {
         StopPlacement();
@@ -49,8 +52,11 @@ public class PlacementSystem : MonoBehaviour
         }
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newObject = Instantiate(dataBase.objectsData[selectedObjectIndex].Prefab);
-        newObject.transform.position = grid.CellToWorld(gridPosition);
+        if (islandBuilding.CanBuildHere(mousePosition))
+        {
+            GameObject newObject = Instantiate(dataBase.objectsData[selectedObjectIndex].Prefab);
+            newObject.transform.position = grid.CellToWorld(gridPosition);
+        }
     }
 
     private void StopPlacement()
@@ -68,7 +74,7 @@ public class PlacementSystem : MonoBehaviour
             return;
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        mouseIndicator.transform.position = mousePosition;
+        //mouseIndicator.transform.position = mousePosition;
         cellIndicator.transform.position = grid.CellToWorld(gridPosition);
     }
 }
