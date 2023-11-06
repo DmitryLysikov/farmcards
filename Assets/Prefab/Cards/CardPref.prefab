@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5586626270561890754}
   - component: {fileID: 1420549241412631211}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5977098404136665139}
   - component: {fileID: 8027690046692559063}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 7300035800285488617}
   - component: {fileID: 4564369143977974658}
   - component: {fileID: 4083710218276647903}
+  - component: {fileID: 4661029404162597127}
   m_Layer: 5
   m_Name: CardPref
   m_TagString: Untagged
@@ -345,3 +346,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4661029404162597127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230848217399494778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e28e4b9ad6f17e43ad8bda11f70d5de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectIndex: 0
+  dataBase: {fileID: 11400000, guid: f497121e3f81e1447b11d7fa646e9774, type: 2}
+  Logo: {fileID: 1420549241412631211}
+  Name: {fileID: 8027690046692559063}
