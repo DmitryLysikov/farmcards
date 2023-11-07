@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlacementSystem : MonoBehaviour
 {
@@ -30,8 +32,17 @@ public class PlacementSystem : MonoBehaviour
         StopPlacement();
     }
 
+    private void DeleteButton()
+    {
+
+    }
+
+
     public void StartPlacement(int ID)
     {
+        //—сылка на нажатую кнопку
+        GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
+        
         StopPlacement();
         selectedObjectIndex = dataBase.objectsData.FindIndex(data => data.ID == ID);
         if(selectedObjectIndex < 0)
@@ -42,6 +53,8 @@ public class PlacementSystem : MonoBehaviour
         cellIndicator.SetActive(true);
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
+            // ”даление кнопки
+        inputManager.OnExit += () => { Destroy(clickedButton); };
     }
 
     private void PlaceStructure()
