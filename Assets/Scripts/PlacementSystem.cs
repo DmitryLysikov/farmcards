@@ -32,12 +32,6 @@ public class PlacementSystem : MonoBehaviour
         StopPlacement();
     }
 
-    private void DeleteButton()
-    {
-
-    }
-
-
     public void StartPlacement(int ID)
     {
         //—сылка на нажатую кнопку
